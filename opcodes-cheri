@@ -85,8 +85,8 @@ fpclearhi            imm16                    15=1           14..12=0x1     11..
 
 # Memory-Access Instructions
 # FIXME: OPCODE?
-clc                   cd      rs1    imm12      14..12=0x7     6..0=0x3
-csc                   imm12hi scrs   cs2        imm12lo        19..17=0x7    6..0=0x23
+clc                   cd      cs1    imm12      14..13=0x0     12=0            6..0=0xb
+csc                   cd      cs1    imm12      14..13=0x0     12=1            6..0=0xb
 
 # FIXME in Manual
 #clc                  srd      cs1    imm12      14..12=0       11=0          6..0=0xb
