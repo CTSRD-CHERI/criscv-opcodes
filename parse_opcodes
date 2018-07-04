@@ -282,6 +282,11 @@ csrs = [
   (0xF12, 'marchid'),
   (0xF13, 'mimpid'),
   (0xF14, 'mhartid'),
+
+  # CHERI CSRs
+  (0x0, 'pcc'),
+  (0x1, 'ddc'),
+
 ]
 
 csrs32 = [
