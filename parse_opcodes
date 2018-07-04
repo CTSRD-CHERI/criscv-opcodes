@@ -51,6 +51,7 @@ arglut['zimm11'] = (30,20)
 #CHERI Registers
 arglut['cd'] = (11,7)
 arglut['cs1'] = (19, 15)
+arglut['csr'] = (19, 15)
 arglut['cs2'] = (24, 20)
 arglut['imm16'] = (31, 16)
 # For SC
