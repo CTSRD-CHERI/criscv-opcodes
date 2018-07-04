@@ -65,7 +65,7 @@ cmovn                cd      cs1    rs2       31..25=0x1c                  14..1
 
 # Control-Flow Instructions
 cjr                  cd                       31..25=0x3f    24..20=0x1f   19..15=0x3    14..12=0x0    6..0=0x5b
-#cjalr                cd      cs1              30..25=0x3f    24..20=0xc                  14..12=0x0    6..0=0x5b
+cjalr                cd      cs1              31..25=0x3f    24..20=0xc                  14..12=0x0    6..0=0x5b
 
 # TODO: Selector for ccal is 0x1 which means a fast-ccall, set to 0 to trap to OS/Exception handler
 ccall                cd      cs1              31..25=0x7e    24..20=0x1                  14..12=0x0    6..0=0x5b
