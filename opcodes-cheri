@@ -84,8 +84,7 @@ fpclearhi            imm16                    15=1           14..12=0x1     11..
 
 # Phase 1:
 cmove                cd      cs1              31..25=0x7f    24..20=0xa     14..12=0x0   6..0=0x5b
-cgetspecial          cd      csr              31..25=0x7f    24..20=0xd     14..12=0x0   6..0=0x5b
-cputspecial          cd      csr              31..25=0x7f    24..20=0xe     14..12=0x0   6..0=0x5b
+cspecialrw           cd      cs1    csr       31..25=0x1                    14..12=0x0   6..0=0x5b
 
 # Memory-Access Instructions
 
