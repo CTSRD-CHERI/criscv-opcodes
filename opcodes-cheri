@@ -62,11 +62,14 @@ ccseal               cd      cs1    cs2       31..25=0x1f    14..12=0x0    6..0=
 # Pointer-Arithmetic Instructions
 ctoptr               rd      cs1    cs2       31..25=0x12                  14..12=0x0    6..0=0x5b
 cfromptr             cd      cs1    rs2       31..25=0x13                  14..12=0x0    6..0=0x5b
+
+# FIXME: The following 3 instructions are deleted from ISAv7
 csub                 rd      cs1    cs2       31..25=0xa                   14..12=0x0    6..0=0x5b
 cmovz                cd      cs1    rs2       31..25=0x1b                  14..12=0x0    6..0=0x5b
 cmovn                cd      cs1    rs2       31..25=0x1c                  14..12=0x0    6..0=0x5b
 
 # Control-Flow Instructions
+#FIXME: We might delete cjr (replace it with cjalr with link register = x0
 cjr                  cd                       31..25=0x7f    24..20=0x1f   19..15=0x3    14..12=0x0    6..0=0x5b
 cjalr                cd      cs1              31..25=0x7f    24..20=0xc                  14..12=0x0    6..0=0x5b
 
@@ -80,6 +83,7 @@ cchecktype           cd      cs1              31..25=0x7f    24..20=0x9         
 ctestsubset          rd      cs1    cs2       31..25=0x20                                14..12=0x0    6..0=0x5b
 
 # Fast Register-Clearing Instructions
+# TODO the following are change in ISAv7
 clearlo              imm16                    15=0           14..12=0x1     11..7=0x0    6..0=0x5b
 clearhi              imm16                    15=1           14..12=0x1     11..7=0x0    6..0=0x5b
 fpclearlo            imm16                    15=0           14..12=0x1     11..7=0x1    6..0=0x5b
