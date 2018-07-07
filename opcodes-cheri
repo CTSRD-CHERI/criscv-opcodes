@@ -48,6 +48,7 @@ cunseal              cd      cs1    cs2       31..25=0xc     14..12=0x0    6..0=
 candperm             cd      cs1    rs2       31..25=0xd     14..12=0x0    6..0=0x5b
 csetoffset           cd      cs1    rs2       31..25=0xf     14..12=0x0    6..0=0x5b
 cincoffset           cd      cs1    rs2       31..25=0x11    14..12=0x0    6..0=0x5b
+cincoffsetimmediate  cd      cs1    imm12                    14..12=0x1    6..0=0x5b
 csetbounds           cd      cs1    rs2       31..25=0x8     14..12=0x0    6..0=0x5b
 csetboundsexact      cd      cs1    rs2       31..25=0x9     14..12=0x0    6..0=0x5b
 csetboundsimmediate  cd      cs1    imm12                    14..12=0x2    6..0=0x5b
