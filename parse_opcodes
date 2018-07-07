@@ -282,11 +282,27 @@ csrs = [
   (0xF12, 'marchid'),
   (0xF13, 'mimpid'),
   (0xF14, 'mhartid'),
+]
+
+cheri_csrs = [
 
   # CHERI CSRs
   (0x0, 'pcc'),
   (0x1, 'ddc'),
 
+  (0x4, 'utcc'),
+  (0x6, 'uscratchc'),
+  (0x7, 'uepcc'),
+
+  (12, 'stcc'),
+  (13, 'scausec'),
+  (14, 'sscratchc'),
+  (15, 'sepcc'),
+
+  (28, 'mtcc'),
+  (29, 'mcausec'),
+  (30, 'mscratchc'),
+  (31, 'mepcc'),
 ]
 
 csrs32 = [
@@ -391,6 +407,11 @@ def make_c(match,mask):
   for num, name in csrs+csrs32:
     print('DECLARE_CSR(%s, CSR_%s)' % (name, name.upper()))
   print('#endif')
+
+  print ('#ifdef DECLARE_CHERI_CSR')
+  for num, name in cheri_csrs:
+    print ('DECLARE_CHERI_CSR(%s, CHERI_CSR_%s)' % (name, name.upper()))
+  print ('#endif')
 
   print('#ifdef DECLARE_CAUSE')
   for num, name in causes:
