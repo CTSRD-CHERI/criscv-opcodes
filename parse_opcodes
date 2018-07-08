@@ -75,7 +75,49 @@ causes = [
   (0x0C, 'fetch page fault'),
   (0x0D, 'load page fault'),
   (0x0F, 'store page fault'),
-  (0x1F, 'cheri_trap'),
+  (0x10, 'cheri_trap'),
+]
+
+cheri_permissions = [
+  (0x0, 'global'),
+  (0x1, 'execute'),
+  (0x2, 'load'),
+  (0x3, 'store'),
+  (0x4, 'load_capability'),
+  (0x5, 'store_capability'),
+  (0x6, 'store_local_capability'),
+  (0x7, 'seal'),
+  (0x8, 'ccall'),
+  (0x9, 'unseal'),
+  (0xa, 'access_system_registers'),
+  (0xb, 'setcid'),
+]
+
+# CHERI Trap Causes in capcause register (non conflicting with RISC-V causes)
+cheri_causes = [
+  (0x1, 'cheri_length_fault'),
+  (0x2, 'cheri_tag_fault'),
+  (0x3, 'cheri_seal_fault'),
+  (0x4, 'cheri_type_fault'),
+  (0x5, 'cheri_ecall'),
+  (0x6, 'cheri_eret'),
+  (0x7, 'cheri_underflow_fault'),
+  (0x8, 'cheri_accessperm_fault'),
+  (0x9, 'cheri_accesstlb_fault'),
+  (0xa, 'cheri_bounds_fault'),
+  (0x10, 'cheri_global_fault'),
+  (0x11, 'cheri_permit_execute_fault'),
+  (0x12, 'cheri_permit_load_fault'),
+  (0x13, 'cheri_permit_store_fault'),
+  (0x14, 'cheri_permit_load_capability__fault'),
+  (0x15, 'cheri_permit_store_capability_fault'),
+  (0x16, 'cheri_permit_store_local_capability_fault'),
+  (0x17, 'cheri_permit_seal_fault'),
+  (0x18, 'cheri_access_system_registers_fault'),
+  (0x19, 'cheri_permit_ccall_fault'),
+  (0x1a, 'cheri_access_ccall_idc_fault'),
+  (0x1b, 'cheri_permit_unseal_fault'),
+  (0x1c, 'cheri_permit_setcid_fault'),
 ]
 
 csrs = [
@@ -394,9 +436,13 @@ def make_c(match,mask):
     print('#define MASK_%s  %s' % (name2, hex(mask[name])))
   for num, name in csrs+csrs32:
     print('#define CSR_%s %s' % (name.upper(), hex(num)))
-  for num, name in causes:
-    print('#define CAUSE_%s %s' % (name.upper().replace(' ', '_'), hex(num)))
-  print('#endif')
+  for num, name in cheri_csrs:
+    print ('#define CHERI_CSR_%s %s' % (name.upper(), hex(num)))
+  for num, name in causes+cheri_causes:
+    print ('#define CAUSE_%s %s' % (name.upper().replace(' ', '_'), hex(num)))
+  for num, name in cheri_permissions:
+    print ('#define CHERI_PERMIT_%s %s' % (name.upper().replace(' ', '_'), hex(num)))
+  print ('#endif')
 
   print('#ifdef DECLARE_INSN')
   for name in namelist:
