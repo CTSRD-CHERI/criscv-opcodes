@@ -185,6 +185,7 @@ csrs = [
   (0x143, 'stval'),
   (0x144, 'sip'),
   (0x180, 'satp'),
+  (0x1FF, 'scausec'),
 
   # Standard Hypervisor R/w
   (0x200, 'vsstatus'),
@@ -319,6 +320,7 @@ csrs = [
   (0x33D, 'mhpmevent29'),
   (0x33E, 'mhpmevent30'),
   (0x33F, 'mhpmevent31'),
+  (0x3FF, 'mcausec'),
 
   # Standard Machine RO
   (0xF11, 'mvendorid'),
@@ -338,12 +340,10 @@ cheri_csrs = [
   (0x7, 'uepcc'),
 
   (12, 'stcc'),
-  (13, 'scausec'),
   (14, 'sscratchc'),
   (15, 'sepcc'),
 
   (28, 'mtcc'),
-  (29, 'mcausec'),
   (30, 'mscratchc'),
   (31, 'mepcc'),
 ]
