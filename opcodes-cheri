@@ -155,3 +155,7 @@ csc                   cd      cs1    imm12      14..13=0x0     12=1            6
 #csfd
 
 # TODO: Atomic Memory-Access Instructions
+
+# Experimental
+# Tag a word
+ctag       rs1      31..25=0x21        24..20=0x0     14..7=0x0   6..0=0x5b
