@@ -185,7 +185,7 @@ csrs = [
   (0x143, 'stval'),
   (0x144, 'sip'),
   (0x180, 'satp'),
-  (0x1FF, 'scausec'),
+  (0x1FF, 'sccsr'),
 
   # Standard Hypervisor R/w
   (0x200, 'vsstatus'),
@@ -320,7 +320,7 @@ csrs = [
   (0x33D, 'mhpmevent29'),
   (0x33E, 'mhpmevent30'),
   (0x33F, 'mhpmevent31'),
-  (0x3FF, 'mcausec'),
+  (0x3FF, 'mccsr'),
 
   # Standard Machine RO
   (0xF11, 'mvendorid'),
