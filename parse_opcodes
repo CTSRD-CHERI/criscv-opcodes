@@ -75,7 +75,7 @@ causes = [
   (0x0C, 'fetch page fault'),
   (0x0D, 'load page fault'),
   (0x0F, 'store page fault'),
-  (0x10, 'cheri_trap'),
+  (0x1F, 'cheri_trap'),
 ]
 
 cheri_permissions = [
@@ -138,7 +138,7 @@ csrs = [
   (0x044, 'uip'),
 
   # Custom User R/W
-  (0x800, 'uccsr'),
+  (0x8C0, 'uccsr'),
 
   # Standard User RO
   (0xC00, 'cycle'),
@@ -190,7 +190,7 @@ csrs = [
   (0x180, 'satp'),
 
   # Custom Supervisor R/W
-  (0x500, 'sccsr'),
+  (0x5C0, 'sccsr'),
 
   # Standard Hypervisor R/w
   (0x200, 'vsstatus'),
@@ -328,7 +328,7 @@ csrs = [
 
 
   # Custom Machine R/W
-  (0xB00, 'mccsr'),
+  (0xBC0, 'mccsr'),
 
   # Standard Machine RO
   (0xF11, 'mvendorid'),
