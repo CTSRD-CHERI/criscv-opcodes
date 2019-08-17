@@ -66,9 +66,7 @@ ctoptr               rd      cs1    cs2       31..25=0x12                  14..1
 cfromptr             cd      cs1    rs2       31..25=0x13                  14..12=0x0    6..0=0x5b
 
 # FIXME: The following 3 instructions are deleted from ISAv7
-csub                 rd      cs1    cs2       31..25=0xa                   14..12=0x0    6..0=0x5b
-cmovz                cd      cs1    rs2       31..25=0x1b                  14..12=0x0    6..0=0x5b
-cmovn                cd      cs1    rs2       31..25=0x1c                  14..12=0x0    6..0=0x5b
+csub                 rd      cs1    cs2       31..25=0x14                  14..12=0x0    6..0=0x5b
 
 # Control-Flow Instructions
 #FIXME: We might delete cjr (replace it with cjalr with link register = x0
