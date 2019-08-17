@@ -190,7 +190,7 @@ csrs = [
   (0x180, 'satp'),
 
   # Custom Supervisor R/W
-  (0x5C0, 'sccsr'),
+  (0x9C0, 'sccsr'),
 
   # Standard Hypervisor R/w
   (0x200, 'vsstatus'),
