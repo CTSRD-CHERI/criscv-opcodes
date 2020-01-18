@@ -75,7 +75,7 @@ causes = [
   (0x0C, 'fetch page fault'),
   (0x0D, 'load page fault'),
   (0x0F, 'store page fault'),
-  (0x1F, 'cheri_trap'),
+  (0x1C, 'cheri_trap'),
 ]
 
 cheri_permissions = [
