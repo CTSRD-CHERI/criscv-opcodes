@@ -1,4 +1,5 @@
-/* See LICENSE for license details. */
+// See LICENSE for license details.
+// See LICENSE_CHERI for license details.
 
 #ifndef RISCV_CSR_ENCODING_H
 #define RISCV_CSR_ENCODING_H
