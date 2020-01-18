@@ -340,20 +340,23 @@ csrs = [
 cheri_csrs = [
 
   # CHERI CSRs
-  (0x0, 'pcc'),
-  (0x1, 'ddc'),
+  (0x00, 'pcc'),
+  (0x01, 'ddc'),
 
-  (0x4, 'utcc'),
-  (0x6, 'uscratchc'),
-  (0x7, 'uepcc'),
+  (0x04, 'utcc'),
+  (0x05, 'utdc'),
+  (0x06, 'uscratchc'),
+  (0x07, 'uepcc'),
 
-  (12, 'stcc'),
-  (14, 'sscratchc'),
-  (15, 'sepcc'),
+  (0x0c, 'stcc'),
+  (0x0d, 'stdc'),
+  (0x0e, 'sscratchc'),
+  (0x0f, 'sepcc'),
 
-  (28, 'mtcc'),
-  (30, 'mscratchc'),
-  (31, 'mepcc'),
+  (0x1c, 'mtcc'),
+  (0x1d, 'mtdc'),
+  (0x1e, 'mscratchc'),
+  (0x1f, 'mepcc'),
 ]
 
 csrs32 = [
