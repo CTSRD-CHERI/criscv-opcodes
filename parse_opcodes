@@ -337,9 +337,9 @@ csrs = [
   (0xF14, 'mhartid'),
 ]
 
-cheri_csrs = [
+cheri_scrs = [
 
-  # CHERI CSRs
+  # CHERI SCRs
   (0x00, 'pcc'),
   (0x01, 'ddc'),
 
@@ -447,8 +447,8 @@ def make_c(match,mask):
     print('#define MASK_%s  %s' % (name2, hex(mask[name])))
   for num, name in csrs+csrs32:
     print('#define CSR_%s %s' % (name.upper(), hex(num)))
-  for num, name in cheri_csrs:
-    print ('#define CHERI_CSR_%s %s' % (name.upper(), hex(num)))
+  for num, name in cheri_scrs:
+    print '#define CHERI_SCR_%s %s' % (name.upper(), hex(num))
   for num, name in causes+cheri_causes:
     print ('#define CAUSE_%s %s' % (name.upper().replace(' ', '_'), hex(num)))
   for num, name in cheri_permissions:
@@ -466,9 +466,9 @@ def make_c(match,mask):
     print('DECLARE_CSR(%s, CSR_%s)' % (name, name.upper()))
   print('#endif')
 
-  print ('#ifdef DECLARE_CHERI_CSR')
-  for num, name in cheri_csrs:
-    print ('DECLARE_CHERI_CSR(%s, CHERI_CSR_%s)' % (name, name.upper()))
+  print ('#ifdef DECLARE_CHERI_SCR')
+  for num, name in cheri_scrs:
+    print ('DECLARE_CHERI_SCR(%s, CHERI_SCR_%s)' % (name, name.upper()))
   print ('#endif')
 
   print('#ifdef DECLARE_CAUSE')
