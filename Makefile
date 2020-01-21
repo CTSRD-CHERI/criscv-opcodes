@@ -5,22 +5,22 @@ PK_H := ../riscv-pk/machine/encoding.h
 ENV_H := ../riscv-tests/env/encoding.h
 OPENOCD_H := ../riscv-openocd/src/target/riscv/encoding.h
 
-ALL_OPCODES := opcodes-pseudo opcodes opcodes-rvc opcodes-rvc-pseudo opcodes-custom opcodes-rvv opcodes-rvv-pseudo opcodes-cheri
+ALL_OPCODES := opcodes-pseudo opcodes opcodes-rvc opcodes-rvc-pseudo opcodes-rvv opcodes-rvv-pseudo opcodes-cheri
 
 install: $(ISASIM_H) $(PK_H) $(ENV_H) $(OPENOCD_H) inst.chisel instr-table.tex priv-instr-table.tex
 
 $(ISASIM_H) $(PK_H) $(ENV_H) $(OPENOCD_H): $(ALL_OPCODES) parse_opcodes encoding.h
 	cp encoding.h $@
-	cat opcodes opcodes-rvc-pseudo opcodes-rvc opcodes-custom opcodes-rvv opcodes-cheri | python ./parse_opcodes -c >> $@
+	cat opcodes opcodes-rvc-pseudo opcodes-rvc opcodes-rvv opcodes-cheri | python ./parse_opcodes -c >> $@
 
 inst.chisel: $(ALL_OPCODES) parse_opcodes
-	cat opcodes opcodes-rvc opcodes-rvc-pseudo opcodes-custom opcodes-rvv opcodes-rvv-pseudo opcodes-pseudo opcodes-cheri | ./parse_opcodes -chisel > $@
+	cat opcodes opcodes-rvc opcodes-rvc-pseudo opcodes-rvv opcodes-rvv-pseudo opcodes-pseudo opcodes-cheri | ./parse_opcodes -chisel > $@
 
 inst.go: opcodes opcodes-pseudo parse_opcodes
 	cat opcodes opcodes-pseudo | ./parse_opcodes -go > $@
 
 inst.sverilog: opcodes opcodes-pseudo parse_opcodes
-	cat opcodes opcodes-rvc opcodes-rvc-pseudo opcodes-custom opcodes-pseudo | ./parse_opcodes -sverilog > $@
+	cat opcodes opcodes-rvc opcodes-rvc-pseudo opcodes-pseudo | ./parse_opcodes -sverilog > $@
 
 instr-table.tex: $(ALL_OPCODES) parse_opcodes
 	cat opcodes opcodes-pseudo | ./parse_opcodes -tex > $@
