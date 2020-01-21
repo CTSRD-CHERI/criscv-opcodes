@@ -448,7 +448,7 @@ def make_c(match,mask):
   for num, name in csrs+csrs32:
     print('#define CSR_%s %s' % (name.upper(), hex(num)))
   for num, name in cheri_scrs:
-    print '#define CHERI_SCR_%s %s' % (name.upper(), hex(num))
+    print ('#define CHERI_SCR_%s %s' % (name.upper(), hex(num)))
   for num, name in causes+cheri_causes:
     print ('#define CAUSE_%s %s' % (name.upper().replace(' ', '_'), hex(num)))
   for num, name in cheri_permissions:
