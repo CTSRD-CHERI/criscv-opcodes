@@ -109,7 +109,7 @@ cheri_causes = [
   (0x11, 'cheri_permit_execute_fault'),
   (0x12, 'cheri_permit_load_fault'),
   (0x13, 'cheri_permit_store_fault'),
-  (0x14, 'cheri_permit_load_capability__fault'),
+  (0x14, 'cheri_permit_load_capability_fault'),
   (0x15, 'cheri_permit_store_capability_fault'),
   (0x16, 'cheri_permit_store_local_capability_fault'),
   (0x17, 'cheri_permit_seal_fault'),
