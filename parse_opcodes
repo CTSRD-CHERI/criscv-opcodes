@@ -99,6 +99,7 @@ cheri_causes = [
   (0x8, 'cheri_accessperm_fault'),
   (0x9, 'cheri_accesstlb_fault'),
   (0xa, 'cheri_bounds_fault'),
+  (0xb, 'cheri_unaligned_base_fault'),
   (0x10, 'cheri_global_fault'),
   (0x11, 'cheri_permit_execute_fault'),
   (0x12, 'cheri_permit_load_fault'),
