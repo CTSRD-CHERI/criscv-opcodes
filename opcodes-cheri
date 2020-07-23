@@ -44,6 +44,7 @@ cgetaddr    rd      rs1              31..25=0x7f    24..20=0xf    14..12=0x0    
 
 # Capability-Modification Instructions
 cseal                rd      rs1    rs2       31..25=0xb     14..12=0x0    6..0=0x5b
+csealentry           rd      rs1              31..25=0x7f    24..20=0x11   14..12=0x0    6..0=0x5b
 cunseal              rd      rs1    rs2       31..25=0xc     14..12=0x0    6..0=0x5b
 
 candperm             rd      rs1    rs2       31..25=0xd     14..12=0x0    6..0=0x5b
