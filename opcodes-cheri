@@ -165,8 +165,5 @@ sc.q                 rd      rs1    rs2  aqrl 31..27=0x3                   14..1
 amoswap.q            rd      rs1    rs2  aqrl 31..27=0x1                   14..12=0x4   6..0=0x2f
 
 # Experimental
-# Tag a word
-ctag       rs1       31..25=0x21        24..20=0x0     14..7=0x0   6..0=0x5b
-
 # Read a cache perfomance counter
 creadhpmcounter   rd  imm12             19..15=0x0   14..12=0x3  6..0=0x5b
